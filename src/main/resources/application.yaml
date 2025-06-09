@@ -4,9 +4,9 @@ server:
 spring:
     datasource:
         platform: postgres
-        url: jdbc:postgresql://localhost:5432/Java
-        username: postgres
-        password: root
+        url: ${DATABASE_URL}
+        username: ${DATABASE_USERNAME}
+        password: ${DATABASE_PASSWORD}
         driverClassName: org.postgresql.Driver
         initialize: true
 
