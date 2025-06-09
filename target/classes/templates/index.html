@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>PRIMEIRA PAGINA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+    <div class="container menu-principal">
+        <h1>SISTEMA DE COMPRAS</h1>
+        <ul>
+            <li><a th:href="@{/cadastropessoa}">CADASTRO PESSOA</a></li>
+            <li><a th:href="@{/listarpessoa}">LISTAR PESSOA</a></li>
+            <li><a th:href="@{/cadastroitem}">CADASTRO ITEM</a></li>
+            <li><a th:href="@{/listaritem}">LISTAR ITEM</a></li>
+            <li><a th:href="@{/cadastropessoa_item}">ADICIONAR ITEM À PESSOA</a></li>
+            <li><a th:href="@{/listarpessoa_item}">LISTAR ITENS DA PESSOA</a></li>
+        </ul>
+    </div>
+</body>
+</html>

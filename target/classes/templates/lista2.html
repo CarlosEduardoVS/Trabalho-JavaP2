@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>LISTAGEM DE ITENS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Itens Cadastrados</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>DESCRIÇÃO</th>
+                    <th>Editar</th>
+                    <th>Apagar</th>
+                </tr>
+            </thead>
+            <tbody th:each="itm: ${itens}">
+                <tr>
+                    <td th:text="${itm.id}"></td>
+                    <td th:text="${itm.nome}"></td>
+                    <td th:text="${itm.descricao}"></td>
+                    <td><a th:href="@{'editar2/' + ${itm.id}}">Editar</a></td>
+                    <td>
+                        <form th:action="@{'deletar2/' + ${itm.id}}" method="post" class="formbtn">
+                            <input type="submit" value="Apagar">
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a th:href="@{/}" class="botao-voltar">Voltar para o Início</a>
+
+    </div>
+</body>
+</html>

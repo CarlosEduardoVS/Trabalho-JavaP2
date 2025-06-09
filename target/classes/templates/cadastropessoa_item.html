@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ADICIONAR ITEM À PESSOA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${nomePag}"></h1>
+        <form th:action="@{${link}}" method="post" th:object="${pessoa_itens}">
+            <label for="pessoa_id">ID da Pessoa:</label>
+            <input id="pessoa_id" type="text" th:field="*{pessoa_id}">
+
+            <label for="item_id">ID do Item:</label>
+            <input id="item_id" type="text" th:field="*{item_id}">
+            
+            <input type="submit" th:value="${valorBtn}">
+        </form>
+
+        <a th:href="@{/}" class="botao-voltar">Voltar para o Início</a>
+
+    </div>
+</body>
+</html>

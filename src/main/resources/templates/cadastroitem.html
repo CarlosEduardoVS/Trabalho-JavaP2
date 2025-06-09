@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CADASTRO DE ITEM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${nomePag}"></h1>
+        <form th:action="@{${link}}" method="post" th:object="${item}">
+            <label for="nome">Nome do Item:</label>
+            <input id="nome" type="text" th:field="*{nome}">
+
+            <label for="descricao">Descrição:</label>
+            <input id="descricao" type="text" th:field="*{descricao}">
+
+            <input type="submit" th:value="${valorBtn}">
+        </form>
+
+        <a th:href="@{/}" class="botao-voltar">Voltar para o Início</a>
+        
+    </div>
+</body>
+</html>
